@@ -1,7 +1,18 @@
 {
-  "name": "notebook",
-  "version": "1.0.0",
-  "main": "index.js",
   "author": "Pedro Martin",
-  "license": "MIT"
+  "dependencies": {
+    "@types/react": "^16.9.25",
+    "next": "^9.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "name": "notebook",
+  "scripts": {
+    "dev": "yarn next",
+    "build": "yarn next build",
+    "start": "yarn next start"
+  },
+  "version": "1.0.0"
 }
