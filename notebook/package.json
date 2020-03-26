@@ -1,18 +1,25 @@
 {
-  "author": "Pedro Martin",
-  "dependencies": {
-    "@types/react": "^16.9.25",
-    "next": "^9.3.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
-  "license": "MIT",
-  "main": "index.js",
   "name": "notebook",
-  "scripts": {
-    "dev": "yarn next",
-    "build": "yarn next build",
-    "start": "yarn next start"
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Pedro Martin",
+  "license": "MIT",
+  "dependencies": {
+    "@mdx-js/react": "^1.5.8",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "spectacle": "^6.0.1",
+    "spectacle-cli": "^0.6.2"
   },
-  "version": "1.0.0"
+  "devDependencies": {
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.0.2",
+    "raw-loader": "^4.0.0",
+    "spectacle-mdx-loader": "^0.1.1",
+    "webpack": "^4.42.1",
+    "webpack-dev-server": "^3.10.3"
+  }
 }
