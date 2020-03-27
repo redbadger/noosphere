@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { render } from 'react-dom';
 import { MDXProvider } from '@mdx-js/react';
@@ -30,9 +31,11 @@ const template = () => (
     width={1}
   >
     <Box padding="0 1em">
+      // @ts-ignore
       <FullScreen />
     </Box>
     <Box padding="1em">
+      // @ts-ignore
       <Progress />
     </Box>
   </FlexBox>
@@ -43,9 +46,11 @@ const Presentation = () => (
   <MDXProvider components={mdxComponentMap}>
     <Deck loop theme={theme} template={template}>
       {slides
+        // @ts-ignore
         .map((MDXSlide, i) => [MDXSlide, notes[i]])
+        // @ts-ignore
         .map(([MDXSlide, MDXNote], i) => (
-          // eslint-disable-next-line react/no-array-index-key
+          // @ts-ignore
           <Slide key={`slide-${i}`} slideNum={i}>
             <MDXSlide />
             <Notes>

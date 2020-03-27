@@ -1,5 +1,7 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+// eslint-disable-next-line no-unused-vars
+import webpack from 'webpack';
 
 // Customized babel loader with the minimum we need to get `mdx` libraries
 // working, which unfortunately codegen JSX instead of JS.
@@ -16,10 +18,10 @@ const babelLoader = {
 /**
  * Base configuration for the CLI, core, and examples.
  */
-module.exports = {
+const config: webpack.Configuration = {
   mode: 'development',
   context: __dirname,
-  entry: './index.js',
+  entry: './index.tsx',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'example.js',
@@ -47,6 +49,7 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         use: [require.resolve('file-loader')],
       },
+      { test: /\.(ts|tsx)$/, exclude: /node_modules/, loader: 'ts-loader' },
     ],
   },
   plugins: [
@@ -64,3 +67,5 @@ module.exports = {
     },
   },
 };
+
+export default config;

@@ -6,20 +6,29 @@
   "license": "MIT",
   "dependencies": {
     "@mdx-js/react": "^1.5.8",
+    "html-webpack-plugin": "^4.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "spectacle": "^6.0.1",
-    "spectacle-cli": "^0.6.2"
+    "spectacle-cli": "^0.6.2",
+    "webpack": "^4.42.1"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.9.4",
+    "@types/html-webpack-plugin": "^3.2.2",
+    "@types/mdx-js__react": "^1.5.1",
+    "@types/react": "^16.9.26",
+    "@types/react-dom": "^16.9.5",
+    "@types/webpack": "^4.41.8",
     "babel-loader": "^8.1.0",
     "file-loader": "^6.0.0",
-    "html-webpack-plugin": "^4.0.2",
     "raw-loader": "^4.0.0",
     "spectacle-mdx-loader": "^0.1.1",
-    "webpack": "^4.42.1",
+    "ts-loader": "^6.2.2",
     "webpack-dev-server": "^3.10.3"
+  },
+  "scripts": {
+    "dev": "yarn webpack-dev-server --port=4000 --hot --config webpack.config.ts"
   }
 }
