@@ -33,6 +33,10 @@
   },
   "name": "noosphere",
   "private": true,
+  "peerDependencies": {
+    "@babel/core": "^7.9.0",
+    "eslint-plugin-react-hooks": "^3.0.0"
+  },
   "repository": "git@github.com:redbadger/noosphere.git",
   "version": "1.0.0",
   "workspaces": [
