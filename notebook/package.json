@@ -29,6 +29,6 @@
     "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
-    "dev": "yarn webpack-dev-server --port=4000 --hot --config webpack.config.ts"
+    "dev": "yarn webpack-dev-server --port=4000 --hot --config ./config/webpack.config.ts"
   }
 }
