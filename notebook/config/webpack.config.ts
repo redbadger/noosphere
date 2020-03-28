@@ -68,6 +68,7 @@ const config: webpack.Configuration = {
       react: require.resolve('react'),
       'react-dom': require.resolve('react-dom'),
     },
+    extensions: ['.ts', '.tsx', '.js', 'jsx'],
   },
 };
 
