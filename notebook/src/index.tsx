@@ -14,15 +14,19 @@ import {
   mdxComponentMap,
 } from 'spectacle';
 
-// SPECTACLE_CLI_MDX_START
 import slides, { notes } from './slides.mdx';
-// SPECTACLE_CLI_MDX_END
 
-// SPECTACLE_CLI_THEME_START
-const theme = {};
-// SPECTACLE_CLI_THEME_END
-
-// SPECTACLE_CLI_TEMPLATE_START
+const theme = {
+  colors: {
+    primary: '#000',
+    secondary: '#000',
+  },
+  fontSizes: {
+    header: '64px',
+    paragraph: '28px',
+  },
+  backgroundColor: 'primary',
+};
 const template = () => (
   <FlexBox
     justifyContent="space-between"
@@ -31,16 +35,13 @@ const template = () => (
     width={1}
   >
     <Box padding="0 1em">
-      // @ts-ignore
-      <FullScreen />
+      <FullScreen size={20} color="black" />
     </Box>
     <Box padding="1em">
-      // @ts-ignore
-      <Progress />
+      <Progress size={25} color="black" />
     </Box>
   </FlexBox>
 );
-// SPECTACLE_CLI_TEMPLATE_END
 
 const Presentation = () => (
   <MDXProvider components={mdxComponentMap}>

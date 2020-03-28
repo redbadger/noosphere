@@ -8,6 +8,7 @@ import config from './webpack.config';
 const prodConfig: webpack.Configuration = {
   ...config,
   mode: 'production',
+  devtool: 'source-map',
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
