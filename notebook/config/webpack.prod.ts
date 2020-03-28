@@ -4,10 +4,11 @@ import config from './webpack.config';
 
 const prodConfig: webpack.Configuration = {
   ...config,
-  mode: 'development',
+  mode: 'production',
   output: {
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, '../build'),
-    filename: 'bundle.js',
   },
 };
 
