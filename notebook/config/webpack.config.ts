@@ -1,6 +1,5 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-// eslint-disable-next-line no-unused-vars
 import webpack from 'webpack';
 
 const entry = path.resolve(__dirname, '../src/index.tsx');
@@ -21,14 +20,13 @@ const babelLoader = {
  * Base configuration for the CLI, core, and examples.
  */
 const config: webpack.Configuration = {
-  mode: 'development',
+  // mode: 'development',
   // context: __dirname,
   entry,
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: 'example.js',
   },
-  devtool: 'source-map',
   module: {
     // Not we use `require.resolve` to make sure to use the loader installed
     // within _this_ project's `node_modules` traversal tree.
@@ -56,7 +54,7 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Spectacle MDX Development Example',
+      title: 'Noosphere',
       template: path.resolve(__dirname, '../src/index.html'),
     }),
   ],
