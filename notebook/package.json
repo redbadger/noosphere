@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@mdx-js/react": "^1.5.8",
+    "@types/webpack-dev-server": "^3.10.1",
     "html-webpack-plugin": "^4.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -29,6 +30,6 @@
     "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
-    "dev": "yarn webpack-dev-server --port=4000 --hot --config ./config/webpack.config.ts"
+    "dev": "yarn webpack-dev-server --display-error-details --color --hot --config ./config/webpack.dev.ts"
   }
 }
