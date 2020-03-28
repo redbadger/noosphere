@@ -20,13 +20,7 @@ const babelLoader = {
  * Base configuration for the CLI, core, and examples.
  */
 const config: webpack.Configuration = {
-  // mode: 'development',
-  // context: __dirname,
   entry,
-  output: {
-    path: path.resolve(__dirname, '../build'),
-    filename: 'example.js',
-  },
   module: {
     // Not we use `require.resolve` to make sure to use the loader installed
     // within _this_ project's `node_modules` traversal tree.
