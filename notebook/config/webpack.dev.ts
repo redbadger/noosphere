@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import webpack from 'webpack';
 import path from 'path';
 import config from './webpack.config';
@@ -6,7 +5,7 @@ import config from './webpack.config';
 const devConfig: webpack.Configuration = {
   ...config,
   mode: 'development',
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, '../dev-build'),
     filename: 'dev-build.js',
