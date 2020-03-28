@@ -1,6 +1,7 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const entry = path.resolve(__dirname, '../src/index.tsx');
 
@@ -26,6 +27,10 @@ const config: webpack.Configuration = {
     // within _this_ project's `node_modules` traversal tree.
     rules: [
       {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
         test: /\.jsx?$/,
         use: [babelLoader],
       },
@@ -50,6 +55,10 @@ const config: webpack.Configuration = {
     new HtmlWebpackPlugin({
       title: 'Noosphere',
       template: path.resolve(__dirname, '../src/index.html'),
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
   ],
   resolve: {
