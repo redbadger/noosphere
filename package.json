@@ -40,6 +40,7 @@
   "repository": "git@github.com:redbadger/noosphere.git",
   "version": "1.0.0",
   "workspaces": [
+    "lessons",
     "notebook"
   ]
 }
