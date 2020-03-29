@@ -13,6 +13,7 @@ import {
   mdxComponentMap,
 } from 'spectacle';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import lessons from 'lessons';
 
 import LessonOne from './pages/lesson-1/index';
 // eslint-disable-next-line import/extensions
@@ -20,7 +21,8 @@ import LessonTwo from './pages/lesson-2/index';
 
 import slides, { notes } from './slides.mdx';
 
-console.log({ slides });
+lessons().then((content) => console.log({ content }));
+// console.log({ slides });
 
 const theme = {
   colors: {

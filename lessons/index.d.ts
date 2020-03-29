@@ -1,7 +1,7 @@
 interface Lessons {
-  name: string;
-  slides: string;
+    name: string;
+    slides: string;
 }
 declare const main: () => Promise<Lessons[]>;
 export default main;
-// # sourceMappingURL=index.d.ts.map
+//# sourceMappingURL=index.d.ts.map

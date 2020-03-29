@@ -11,7 +11,8 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "spectacle": "^6.0.1",
-    "spectacle-cli": "^0.6.2"
+    "spectacle-cli": "^0.6.2",
+    "lessons": "1.0.0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.9.4",
