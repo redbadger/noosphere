@@ -31,7 +31,7 @@ const config: webpack.Configuration = {
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)?$/,
         use: [babelLoader],
       },
       // `.md` files are processed as pure text.
@@ -48,7 +48,11 @@ const config: webpack.Configuration = {
         test: /\.(png|svg|jpg|gif)$/,
         use: [require.resolve('file-loader')],
       },
-      { test: /\.(ts|tsx)$/, exclude: /node_modules/, loader: 'ts-loader' },
+      {
+        test: /\.(ts|tsx|d\.ts)$/,
+        exclude: /node_modules/,
+        loader: 'ts-loader',
+      },
     ],
   },
   plugins: [
@@ -68,7 +72,10 @@ const config: webpack.Configuration = {
       react: require.resolve('react'),
       'react-dom': require.resolve('react-dom'),
     },
-    extensions: ['.ts', '.tsx', '.js', 'jsx'],
+    extensions: ['.ts', '.tsx', '.js', 'jsx', 'json', '.d.ts'],
+  },
+  node: {
+    fs: 'empty',
   },
 };
 
