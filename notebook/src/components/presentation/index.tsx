@@ -16,7 +16,7 @@ const getSlides = async (lesson: Lesson): Promise<JSX.Element[]> =>
     }
   });
 
-const Presentation = async (lesson: Lesson) => {
+const Presentation: React.FC = async (lesson: Lesson) => {
   const slides = await getSlides(lesson);
   return (
     <MDXProvider components={mdxComponentMap}>
