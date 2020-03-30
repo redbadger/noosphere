@@ -6,14 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = require("fs");
 const path_1 = __importDefault(require("path"));
 const directoriesMapFilePath = path_1.default.resolve('./directories-map.json');
-const getDirectories = async (source = './') => {
+exports.getDirectories = async (source = '../lessons') => {
     const dirents = await fs_1.promises.readdir(source, { withFileTypes: true });
     return dirents
         .filter((dirent) => dirent.isDirectory())
         .map((dirent) => dirent.name);
 };
 const main = async () => {
-    const directories = await getDirectories();
+    const directories = await exports.getDirectories();
     const directoriesMap = directories.map((dir) => ({
         name: dir,
         slides: `${dir}/slides.mdx`,
@@ -24,3 +24,4 @@ if (!module.parent) {
     // eslint-disable-next-line no-console
     main().then(() => console.log('Build done'));
 }
+exports.default = main;

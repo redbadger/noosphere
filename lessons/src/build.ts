@@ -1,14 +1,10 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-
-export interface Lesson {
-  name: string;
-  slides: string;
-}
+import { Lesson } from './index';
 
 const directoriesMapFilePath = path.resolve('./directories-map.json');
 
-const getDirectories = async (source: string = './') => {
+export const getDirectories = async (source: string = '../lessons') => {
   const dirents = await fs.readdir(source, { withFileTypes: true });
   return dirents
     .filter((dirent) => dirent.isDirectory())
@@ -29,3 +25,5 @@ if (!module.parent) {
   // eslint-disable-next-line no-console
   main().then(() => console.log('Build done'));
 }
+
+export default main;

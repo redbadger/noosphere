@@ -2,4 +2,5 @@ export interface Lesson {
     name: string;
     slides: string;
 }
-//# sourceMappingURL=build.d.ts.map
+declare const map: Lesson[];
+export default map;
