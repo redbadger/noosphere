@@ -1,17 +1,12 @@
 "use strict";
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs_1 = require("fs");
-const getDirectories = async (source = './') => {
-    const dirents = await fs_1.promises.readdir(source, { withFileTypes: true });
-    return dirents
-        .filter((dirent) => dirent.isDirectory())
-        .map((dirent) => dirent.name);
-};
-const main = async () => {
-    const directories = await getDirectories();
-    return directories.map((dir) => ({
-        name: dir,
-        slides: `${dir}/slides.mdx`,
-    }));
-};
-exports.default = main;
+const directoriesMap = __importStar(require("./directories-map.json"));
+const map = directoriesMap;
+exports.default = map;

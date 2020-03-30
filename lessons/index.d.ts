@@ -1,7 +1,4 @@
-interface Lessons {
-    name: string;
-    slides: string;
-}
-declare const main: () => Promise<Lessons[]>;
-export default main;
+import { Lesson } from './build';
+declare const map: Lesson[];
+export default map;
 //# sourceMappingURL=index.d.ts.map

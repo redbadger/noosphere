@@ -3,7 +3,8 @@
   "main": "index.js",
   "name": "lessons",
   "scripts": {
-    "build": "yarn tsc --build"
+    "ts": "yarn tsc --build",
+    "postinstall": "yarn ts-node build.ts"
   },
   "version": "1.0.0"
 }
