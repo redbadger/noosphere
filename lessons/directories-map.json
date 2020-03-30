@@ -1,4 +1,1 @@
-[
-  { "name": "accesability", "slides": "accesability/slides.mdx" },
-  { "name": "git", "slides": "git/slides.mdx" }
-]
+[{"name":"dist","slides":"dist/slides.mdx"},{"name":"lessons","slides":"lessons/slides.mdx"},{"name":"src","slides":"src/slides.mdx"}]
