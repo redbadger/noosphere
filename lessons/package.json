@@ -2,7 +2,7 @@
   "author": "Pedro Martín Valera <pedro.martin@red-badger.com>",
   "license": "MIT",
   "files ": [
-    "dist/**/*"
+    "./dist/**/*"
   ],
   "main": "./dist/index.js",
   "name": "@redbadger/lessons",
@@ -18,6 +18,6 @@
     "postinstall": "yarn ts-node ./src/build.ts && yarn ts",
     "prepublish": "yarn ts"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "types": "./dist/index.d.ts"
 }
