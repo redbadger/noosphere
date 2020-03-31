@@ -1,7 +1,15 @@
 {
+  "author": "Pedro Martín Valera <pedro.martin@red-badger.com>",
   "license": "MIT",
   "main": "./dist/index.js",
-  "name": "lessons",
+  "name": "@redbadger/lessons",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "url": "git@github.com:redbadger/noosphere.git",
+    "type": "git"
+  },
   "scripts": {
     "ts": "yarn tsc --build",
     "postinstall": "yarn ts-node ./src/build.ts && yarn ts"

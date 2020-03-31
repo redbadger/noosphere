@@ -4,7 +4,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import lessons, { Lesson } from 'lessons/';
+import lessons, { Lesson } from '@redbadger/lessons';
 import Presentation from './components/presentation';
 
 // eslint-disable-next-line import/extensions
