@@ -3,16 +3,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import lessons, { Lesson } from 'lessons/';
-import Presentation from './components/presentation';
+import { Deck, FlexBox, Box, Progress, FullScreen, Markdown } from 'spectacle';
 
-// eslint-disable-next-line import/extensions
-import LessonOne from './pages/lesson-1/index';
-// eslint-disable-next-line import/extensions
-import LessonTwo from './pages/lesson-2/index';
-
-import slides, { notes } from './slides.mdx';
+import slides from './slides.md';
 
 const App: React.FC = () => (
   <Router>

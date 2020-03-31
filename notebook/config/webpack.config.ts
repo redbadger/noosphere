@@ -40,10 +40,10 @@ const config: webpack.Configuration = {
         use: [require.resolve('raw-loader')],
       },
       // `.mdx` files go through babel and mdx transforming loader.
-      {
-        test: /\.mdx$/,
-        use: [babelLoader, require.resolve('spectacle-mdx-loader')],
-      },
+      // {
+      //   test: /\.mdx$/,
+      //   use: [babelLoader, require.resolve('spectacle-mdx-loader')],
+      // },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [require.resolve('file-loader')],
