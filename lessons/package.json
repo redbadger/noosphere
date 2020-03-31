@@ -12,8 +12,9 @@
   },
   "scripts": {
     "ts": "yarn tsc --build",
-    "postinstall": "yarn ts-node ./src/build.ts && yarn ts"
+    "postinstall": "yarn ts-node ./src/build.ts && yarn ts",
+    "prepublish": "yarn ts"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "types": "./dist/index.d.ts"
 }
