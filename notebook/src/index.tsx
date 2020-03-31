@@ -14,62 +14,39 @@ import LessonTwo from './pages/lesson-2/index';
 
 import slides, { notes } from './slides.mdx';
 
-// const App: React.FC = () => (
-//   <Router>
-//     <div>
-//       <nav>
-//         <ul>
-//           <li>
-//             <Link to="/">Home</Link>
-//           </li>
-//           <li>
-//             <Link to="/lesson-1">Lesson 1</Link>
-//           </li>
-//           <li>
-//             <Link to="/lesson-2">Lesson 2</Link>
-//           </li>
-//         </ul>
-//       </nav>
-
-//       {/* A <Switch> looks through its children <Route>s and
-//         renders the first one that matches the current URL. */}
-//       <Switch>
-//         <Route path="/lesson-1">
-//           <LessonOne />
-//         </Route>
-//         <Route path="/lesson-2">
-//           <LessonTwo />
-//         </Route>
-//         <Route path="/">
-//           <h1>Home</h1>
-//         </Route>
-//       </Switch>
-//     </div>
-//   </Router>
-// );
-
-console.log(lessons);
-
 const App: React.FC = () => (
   <Router>
-    <nav>
-      <ul>
-        {lessons.default.map((lesson: Lesson) => (
-          <li key={lesson.name}>
-            <Link to={`${lesson.name}`}>{lesson.name}</Link>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
           </li>
-        ))}
-      </ul>
-    </nav>
+          <li>
+            <Link to="/lesson-1">Lesson 1</Link>
+          </li>
+          <li>
+            <Link to="/lesson-2">Lesson 2</Link>
+          </li>
+        </ul>
+      </nav>
 
-    <Switch>
-      {lessons.default.map(async (lesson: Lesson) => (
-        <Route key={lesson.name} path={lesson.name}>
-          <Presentation lesson={lesson} />
+      {/* A <Switch> looks through its children <Route>s and
+        renders the first one that matches the current URL. */}
+      <Switch>
+        <Route path="/lesson-1">
+          <LessonOne />
         </Route>
-      ))}
-    </Switch>
+        <Route path="/lesson-2">
+          <LessonTwo />
+        </Route>
+        <Route path="/">
+          <h1>Home</h1>
+        </Route>
+      </Switch>
+    </div>
   </Router>
 );
+
 
 render(<App />, document.getElementById('root'));
