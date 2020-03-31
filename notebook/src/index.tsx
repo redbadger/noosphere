@@ -7,39 +7,16 @@ import { Deck, FlexBox, Box, Progress, FullScreen, Markdown } from 'spectacle';
 
 import slides from './slides.md';
 
-const App: React.FC = () => (
-  <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/lesson-1">Lesson 1</Link>
-          </li>
-          <li>
-            <Link to="/lesson-2">Lesson 2</Link>
-          </li>
-        </ul>
-      </nav>
+type PresentationContent = {
+  content: React.ReactNode;
+};
 
-      {/* A <Switch> looks through its children <Route>s and
-        renders the first one that matches the current URL. */}
-      <Switch>
-        <Route path="/lesson-1">
-          <LessonOne />
-        </Route>
-        <Route path="/lesson-2">
-          <LessonTwo />
-        </Route>
-        <Route path="/">
-          <h1>Home</h1>
-        </Route>
-      </Switch>
-    </div>
-  </Router>
-);
+const Presentation: React.FC<PresentationContent> = ({
+  content,
+}: PresentationContent) => (
+    <Deck loop theme={theme} template={template}>
+      <Markdown containsSlides>{content}</Markdown>
+    </Deck>
+  );
 
-
-render(<App />, document.getElementById('root'));
+render(<Presentation content={slides} />, document.getElementById('root'));
