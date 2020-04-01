@@ -1,34 +1,18 @@
-// @ts-nocheck
 import React from 'react';
-import { MDXProvider } from '@mdx-js/react';
-import { Deck, Slide, mdxComponentMap } from 'spectacle';
-import { Lesson } from 'lessons/build';
-import theme from '../../styles/theme';
-import template from '../template';
+import template from '../template/index.tsx';
+import { Deck, Markdown } from 'spectacle';
+import theme from '../../styles/theme.ts';
 
-const getSlides = async (lesson: Lesson): Promise<JSX.Element[]> =>
-  new Promise((resolve, reject) => {
-    try {
-      const slides: JSX.Element[] = require(`lessons/${lesson.name}`);
-      resolve(slides);
-    } catch (error) {
-      reject(error);
-    }
-  });
-
-const Presentation: React.FC = async (lesson: Lesson) => {
-  const slides = await getSlides(lesson);
-  return (
-    <MDXProvider components={mdxComponentMap}>
-      <Deck loop theme={theme} template={template}>
-        {slides.map(([MDXSlide], i) => (
-          <Slide key={`slide-${i}`} slideNum={i}>
-            <MDXSlide />
-          </Slide>
-        ))}
-      </Deck>
-    </MDXProvider>
-  );
+type PresentationContent = {
+  content: React.ReactNode;
 };
+
+const Presentation: React.FC<PresentationContent> = ({
+  content,
+}: PresentationContent) => (
+    <Deck loop theme={theme} template={template}>
+      <Markdown containsSlides>{content}</Markdown>
+    </Deck>
+  );
 
 export default Presentation;
