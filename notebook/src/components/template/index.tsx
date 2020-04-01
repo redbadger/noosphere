@@ -1,7 +1,7 @@
 import React from 'react';
-import { FlexBox, Box, Progress, FullScreen, TemplateFn } from 'spectacle';
+import { FlexBox, Box, Progress, FullScreen } from 'spectacle';
 
-const template: TemplateFn = () => (
+const template = () => (
   <FlexBox
     justifyContent="space-between"
     position="absolute"
