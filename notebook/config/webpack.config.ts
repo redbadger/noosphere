@@ -49,9 +49,9 @@ const config: webpack.Configuration = {
         use: [require.resolve('file-loader')],
       },
       {
-        test: /\.(ts|tsx|d\.ts)$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: 'ts-loader',
+        use: [babelLoader, { loader: 'ts-loader' }],
       },
     ],
   },
@@ -72,10 +72,7 @@ const config: webpack.Configuration = {
       react: require.resolve('react'),
       'react-dom': require.resolve('react-dom'),
     },
-    extensions: ['.ts', '.tsx', '.js', 'jsx', 'json', '.d.ts'],
-  },
-  node: {
-    fs: 'empty',
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.md', '.json'],
   },
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import template from '../template/index.tsx';
+import template from '../template';
 import { Deck, Markdown } from 'spectacle';
-import theme from '../../styles/theme.ts';
+import theme from '../../styles/theme';
 
 type PresentationContent = {
   content: React.ReactNode;
