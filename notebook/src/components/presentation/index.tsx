@@ -10,9 +10,9 @@ type PresentationContent = {
 const Presentation: React.FC<PresentationContent> = ({
   content,
 }: PresentationContent) => (
-    <Deck loop theme={theme} template={template}>
-      <Markdown containsSlides>{content}</Markdown>
-    </Deck>
-  );
+  <Deck loop theme={theme} template={template}>
+    <Markdown containsSlides>{content}</Markdown>
+  </Deck>
+);
 
 export default Presentation;
