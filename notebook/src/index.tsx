@@ -5,7 +5,8 @@ import { render } from 'react-dom';
 
 import { Deck, FlexBox, Box, Progress, FullScreen, Markdown } from 'spectacle';
 
-import slides from './slides.md';
+// import slides from './slides.md';
+import slides from '../../lessons/accesability/slides.md';
 
 type PresentationContent = {
   content: React.ReactNode;
