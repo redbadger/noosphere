@@ -4,7 +4,7 @@
     "es6": true,
     "node": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": ["prettier"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -17,15 +17,9 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["prettier", "@typescript-eslint"],
   "rules": {
-    "import/extensions": "off",
-    "no-unused-vars": "off",
-    "import/no-unresolved": "off",
-    "@typescript-eslint/no-unused-vars": "off",
-    "react/jsx-filename-extension": [
-      1,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-    ]
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-unused-vars": "off"
   }
 }
