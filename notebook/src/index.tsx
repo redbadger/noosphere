@@ -4,28 +4,28 @@ import GitPage from './pages/git';
 import IndexPage from './pages';
 import React from 'react';
 
-const App: React.FC = () => (
-  <Router>
-    <Switch>
-      <Route path="/">
-        <IndexPage />
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/git">Git and GitHub</Link>
-            </li>
-          </ul>
-        </nav> */}
-      </Route>
-      <Route path="/git">
-        <h1>Git</h1>
-        <GitPage />
-      </Route>
-    </Switch>
-  </Router>
-);
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/git">
+            <GitPage />
+          </Route>
+          <Route path="/">
+            <IndexPage />
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/git">Git & GitHub</Link>
+                </li>
+              </ul>
+            </nav>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
 
 render(<App />, document.getElementById('root'));
