@@ -40,7 +40,7 @@ const prodConfig: webpack.Configuration = {
   output: {
     filename: '[name].[hash].bundle.js',
     chunkFilename: '[name].[hash].bundle.js',
-    path: path.resolve(__dirname, '../build'),
+    path: path.resolve(__dirname, '../../build'),
     publicPath: '/',
   },
   // plugins,
