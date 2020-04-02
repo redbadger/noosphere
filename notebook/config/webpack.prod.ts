@@ -15,7 +15,7 @@ const prodConfig: webpack.Configuration = {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, '../build'),
-    // publicPath: './',
+    publicPath: '/', // FIXME
   },
 };
 
