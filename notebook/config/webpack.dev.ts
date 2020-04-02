@@ -9,11 +9,12 @@ const devConfig: webpack.Configuration = {
   output: {
     path: path.resolve(__dirname, '../dev-build'),
     filename: 'dev-build.js',
+    publicPath: '/',
   },
   // @ts-ignore
   devServer: {
-    open: true,
     port: 3000,
+    historyApiFallback: true,
   },
 };
 

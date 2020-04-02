@@ -1,18 +1,10 @@
 import React from 'react';
-import { FlexBox, Box, Progress, FullScreen } from 'spectacle';
+import { FlexBox, Box, Progress } from 'spectacle';
 
 const template = () => (
-  <FlexBox
-    justifyContent="space-between"
-    position="absolute"
-    bottom={0}
-    width={1}
-  >
+  <FlexBox justifyContent="center" position="absolute" bottom={0} width={1}>
     <Box padding="0 1em">
-      <FullScreen size={20} color="black" />
-    </Box>
-    <Box padding="1em">
-      <Progress size={25} color="black" />
+      <Progress size={5} color="black" />
     </Box>
   </FlexBox>
 );
