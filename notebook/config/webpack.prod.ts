@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import webpack from 'webpack';
 import path from 'path';
 import TerserJSPlugin from 'terser-webpack-plugin';
@@ -16,6 +15,7 @@ const prodConfig: webpack.Configuration = {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, '../build'),
+    // publicPath: './',
   },
 };
 

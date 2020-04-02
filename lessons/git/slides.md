@@ -1,10 +1,4 @@
-class: center, middle
-
-# .center[Version Control]
-
-## .center[Pedro Martin]
-
-.logo[![](https://pataruco.s3.amazonaws.com/ga/assets/ga.svg)]
+## Version control
 
 ---
 
