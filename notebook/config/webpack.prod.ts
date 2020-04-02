@@ -9,21 +9,33 @@ const prodConfig: webpack.Configuration = {
   mode: 'production',
   devtool: 'source-map',
   optimization: {
-    minimizer: [new TerserJSPlugin({ parallel: true,  extractComments: true,  cache: true,}), new OptimizeCSSAssetsPlugin({})],
+    chunkIds: 'named',
+    mergeDuplicateChunks: true,
+    minimizer: [
+      new TerserJSPlugin({
+        parallel: true,
+        extractComments: true,
+        cache: true,
+        sourceMap: true,
+      }),
+      new OptimizeCSSAssetsPlugin({}),
+    ],
     minimize: true,
+    namedChunks: true,
+    removeEmptyChunks: true,
     splitChunks: {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/](react|react-dom|spectacle|react-router-dom)[\\/]/,
           name: 'vendor',
           chunks: 'all',
-        }
-      }
+        },
+      },
     },
   },
   output: {
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    filename: '[name].[hash].bundle.js',
+    chunkFilename: '[name].[hash].bundle.js',
     path: path.resolve(__dirname, '../build'),
     publicPath: '/',
   },
