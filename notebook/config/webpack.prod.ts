@@ -3,6 +3,10 @@ import path from 'path';
 import TerserJSPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import config from './webpack.config';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+
+// bundle analyser
+const plugins = config.plugins?.concat(new BundleAnalyzerPlugin());
 
 const prodConfig: webpack.Configuration = {
   ...config,
@@ -26,7 +30,7 @@ const prodConfig: webpack.Configuration = {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/](react|react-dom|spectacle|react-router-dom)[\\/]/,
+          test: /[\\/]node_modules[\\/](react|react-dom|spectacle|react-router-dom|he)[\\/]/,
           name: 'vendor',
           chunks: 'all',
         },
@@ -39,6 +43,7 @@ const prodConfig: webpack.Configuration = {
     path: path.resolve(__dirname, '../build'),
     publicPath: '/',
   },
+  // plugins,
 };
 
 export default prodConfig;
