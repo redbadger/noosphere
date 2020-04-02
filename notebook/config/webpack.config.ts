@@ -14,6 +14,7 @@ const babelLoader = {
     babelrc: true,
     // ... with some additional needed options.
     presets: [require.resolve('@babel/preset-react')],
+    plugins: [require.resolve('@babel/plugin-syntax-dynamic-import')],
   },
 };
 
