@@ -3,9 +3,9 @@ on:
   push:
     tags:
       - 'R*'
-    paths:
-      - 'notebook/*'
-      - 'lessons/*'
+    # paths:
+    #   - 'notebook/*'
+    #   - 'lessons/*'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
