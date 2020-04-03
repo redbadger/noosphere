@@ -15,7 +15,12 @@ const IndexPage: React.FC = () => (
                 <Link to="/git/">Presentation</Link>
               </li>
               <li>
-                <a href="">Instructional manual</a>
+                <a
+                  href="https://github.com/redbadger/noosphere/blob/git-instructional-material/lessons/git/instructional-manual.md"
+                  title="Git & GitHub"
+                >
+                  Instructional manual
+                </a>
               </li>
             </ul>
           </details>
