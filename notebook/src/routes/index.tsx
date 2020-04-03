@@ -6,7 +6,7 @@ import IndexPage from '../pages';
 const Routes = () => (
   <Router>
     <Switch>
-      <Route path="/git">
+      <Route path="/git/*">
         <GitPage />
       </Route>
       <Route path="/">
