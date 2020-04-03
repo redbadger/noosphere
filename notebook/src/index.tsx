@@ -3,20 +3,14 @@ import { render } from 'react-dom';
 import GitPage from './pages/git';
 import IndexPage from './pages';
 import React from 'react';
+import Routes from './routes';
 
-export default function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route path="/git">
-          <GitPage />
-        </Route>
-        <Route path="/">
-          <IndexPage />
-        </Route>
-      </Switch>
-    </Router>
-  );
-}
+// export default function App() {
+//   return (
+
+//   );
+// }
+
+const App: React.FC = () => <Routes />;
 
 render(<App />, document.getElementById('root'));
