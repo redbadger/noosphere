@@ -2,7 +2,6 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const entry = path.resolve(__dirname, '../src/index.tsx');
 
@@ -66,7 +65,6 @@ const config: webpack.Configuration = {
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
-    new CleanWebpackPlugin(),
   ],
   resolve: {
     alias: {

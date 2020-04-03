@@ -4,9 +4,15 @@ import TerserJSPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import config from './webpack.config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 // bundle analyser
-const plugins = config.plugins?.concat(new BundleAnalyzerPlugin());
+// const plugins = config.plugins?.concat([
+//   new BundleAnalyzerPlugin(),
+//   new CleanWebpackPlugin(),
+// ]);
+
+const plugins = config.plugins?.concat(new CleanWebpackPlugin());
 
 const prodConfig: webpack.Configuration = {
   ...config,
@@ -41,9 +47,8 @@ const prodConfig: webpack.Configuration = {
     filename: '[name].[hash].bundle.js',
     chunkFilename: '[name].[hash].bundle.js',
     path: path.resolve(__dirname, '../../build'),
-    // publicPath: '/',
   },
-  // plugins,
+  plugins,
 };
 
 export default prodConfig;

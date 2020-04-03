@@ -8,7 +8,17 @@ const IndexPage: React.FC = () => (
     <nav>
       <ul>
         <li>
-          <Link to="/git/">Git & GitHub</Link>
+          <details>
+            <summary>Git & GitHub</summary>
+            <ul>
+              <li>
+                <Link to="/git/">Presentation</Link>
+              </li>
+              <li>
+                <a href="">Instructional manual</a>
+              </li>
+            </ul>
+          </details>
         </li>
       </ul>
     </nav>
