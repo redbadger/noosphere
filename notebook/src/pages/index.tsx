@@ -1,9 +1,30 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import styled from 'styled-components';
+
+const StyledPaged = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  h2 {
+    padding-left: 20px;
+  }
+
+  nav {
+    flex-grow: 1;
+  }
+
+  ul {
+    list-style: none;
+  }
+`;
 
 const IndexPage: React.FC = () => (
-  <Fragment>
-    <h1>Noosphere</h1>
+  <StyledPaged>
+    <Header />
     <h2>Table of contents</h2>
     <nav>
       <ul>
@@ -27,7 +48,8 @@ const IndexPage: React.FC = () => (
         </li>
       </ul>
     </nav>
-  </Fragment>
+    <Footer />
+  </StyledPaged>
 );
 
 export default IndexPage;
