@@ -75,6 +75,7 @@ const config: webpack.Configuration = {
     },
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.md', '.json'],
   },
+  target: 'web',
 };
 
 export default config;

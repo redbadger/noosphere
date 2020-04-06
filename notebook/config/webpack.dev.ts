@@ -5,7 +5,7 @@ import config from './webpack.config';
 const devConfig: webpack.Configuration = {
   ...config,
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'eval',
   output: {
     path: path.resolve(__dirname, '../dev-build'),
     filename: 'dev-build.js',
@@ -15,6 +15,7 @@ const devConfig: webpack.Configuration = {
   devServer: {
     port: 3000,
     historyApiFallback: true,
+    compress: true,
   },
 };
 
