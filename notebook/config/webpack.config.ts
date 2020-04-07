@@ -60,6 +60,7 @@ const config: webpack.Configuration = {
     new HtmlWebpackPlugin({
       title: 'Noosphere',
       template: path.resolve(__dirname, '../src/index.html'),
+      favicon: path.resolve(__dirname, '../assets/mhra-logo.svg'),
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
