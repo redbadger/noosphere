@@ -1,6 +1,13 @@
 import webpack from 'webpack';
 import path from 'path';
 import config from './webpack.config';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
+const plugins = config.plugins?.concat([
+  new MiniCssExtractPlugin({
+    filename: 'style.css',
+  }),
+]);
 
 const devConfig: webpack.Configuration = {
   ...config,
@@ -17,6 +24,7 @@ const devConfig: webpack.Configuration = {
     historyApiFallback: true,
     compress: true,
   },
+  plugins,
 };
 
 export default devConfig;

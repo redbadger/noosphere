@@ -58,13 +58,9 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Noosphere',
+      title: 'MHRA Transformation Academy',
       template: path.resolve(__dirname, '../src/index.html'),
       favicon: path.resolve(__dirname, '../assets/mhra-logo.svg'),
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
     }),
   ],
   resolve: {
