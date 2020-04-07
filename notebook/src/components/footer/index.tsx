@@ -7,7 +7,7 @@ const StyledFooter = styled.footer`
 
   h2 {
     color: white;
-    text-aling: center;
+    text-align: center;
   }
 `;
 

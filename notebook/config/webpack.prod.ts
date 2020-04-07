@@ -5,6 +5,7 @@ import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import config from './webpack.config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 // bundle analyser
 // const plugins = config.plugins?.concat([
@@ -12,7 +13,13 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 //   new CleanWebpackPlugin(),
 // ]);
 
-const plugins = config.plugins?.concat(new CleanWebpackPlugin());
+const plugins = config.plugins?.concat(
+  new CleanWebpackPlugin(),
+  new MiniCssExtractPlugin({
+    filename: '[name].css',
+    chunkFilename: '[id].css',
+  }),
+);
 
 const prodConfig: webpack.Configuration = {
   ...config,
