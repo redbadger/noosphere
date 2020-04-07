@@ -24,7 +24,6 @@ const plugins = config.plugins?.concat(
 const prodConfig: webpack.Configuration = {
   ...config,
   mode: 'production',
-  devtool: 'source-map',
   optimization: {
     chunkIds: 'named',
     mergeDuplicateChunks: true,
