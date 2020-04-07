@@ -45,7 +45,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
-    "dev": "yarn webpack-dev-server -p --progress --display-error-details --color --hot --config ./config/webpack.dev.ts",
-    "build": "yarn webpack -p --progress --config ./config/webpack.prod.ts"
+    "dev": "yarn webpack-dev-server --display-error-details --color --hot --config ./config/webpack.dev.ts",
+    "build": "yarn webpack --config ./config/webpack.prod.ts"
   }
 }
